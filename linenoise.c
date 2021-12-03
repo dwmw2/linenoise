@@ -1831,6 +1831,10 @@ char *linenoise(const char *prompt)
         printf("%s", prompt);
         fflush(stdout);
         sb = sb_getline(stdin);
+        if (sb) {
+            printf("%s\n", sb_str(sb));
+            fflush(stdout);
+        }
     }
     else {
         current.buf = sb_alloc();
