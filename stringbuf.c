@@ -25,6 +25,7 @@
 stringbuf *sb_alloc(void)
 {
 	stringbuf *sb = (stringbuf *)malloc(sizeof(*sb));
+	assert(sb);
 	sb->remaining = 0;
 	sb->last = 0;
 #ifdef USE_UTF8
